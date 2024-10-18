@@ -1,6 +1,6 @@
 #include "WebServer.h"
 
-WebServer::WebServer(int id) : requestsProcessed(0), serverId(id), isAvailable(true) {}
+WebServer::WebServer(int id) : remainingTime(0), serverId(id), isAvailable(true) {}
 
 void WebServer::processRequest(const Request& req) {
     if (isAvailable) {
@@ -8,20 +8,25 @@ void WebServer::processRequest(const Request& req) {
                   << req.getIpIn() << " to " << req.getIpOut() << " (" << req.getJobType() << ")" 
                   << " for " << req.getTime() << " clock cycles." << std::endl;
     
-        requestsProcessed++;
+        remainingTime = req.getTime();
         isAvailable = false;
-
-        requestCompleted();
-    } else {
-        std::cout << "WebServer " << serverId << " is currently busy." << std::endl;
     }
 }
 
-int WebServer::getRequestCount() const {
-    return requestsProcessed;
+void WebServer::processCycle() {
+    if (!isAvailable && remainingTime > 0) {
+        remainingTime--;
+        if (remainingTime == 0) {
+            requestCompleted();
+        }
+    }
 }
 
 void WebServer::requestCompleted() {
     std::cout << "WebServer " << serverId << " completed request." << std::endl;
     isAvailable = true; 
+}
+
+bool WebServer::getIsAvailable() {
+    return isAvailable;
 }

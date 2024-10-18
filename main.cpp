@@ -24,9 +24,8 @@ int main() {
 
     LoadBalancer lb(numServers, numServers * 100);
 
-    // Initial queue population
     for (int i = 0; i < numServers * 100; ++i) {
-        lb.addRequest(Request(generateRandomIP(), generateRandomIP(), rand() % 100, generateRandomJobType()));
+        lb.addRequest(Request(generateRandomIP(), generateRandomIP(), rand() % 10, generateRandomJobType()));
     }
 
     lb.run(timeLimit);

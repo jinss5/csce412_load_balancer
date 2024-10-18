@@ -6,15 +6,17 @@
 
 class WebServer {
 private:
-    int requestsProcessed;
+    int remainingTime;
     int serverId;
     bool isAvailable;
 
 public:
     WebServer(int id);
     void processRequest(const Request& req);
-    int getRequestCount() const;
+    void processCycle();
+    // int getRequestCount() const;
     void requestCompleted();
+    bool getIsAvailable();
 };
 
 #endif // WEBSERVER_H

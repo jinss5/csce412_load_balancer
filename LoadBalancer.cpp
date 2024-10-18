@@ -19,15 +19,18 @@ void LoadBalancer::addRequest(const Request& req) {
 void LoadBalancer::assignRequests() {
     for (auto& server : webServers) {
         if (!requestQueue.isEmpty()) {
-            Request req = requestQueue.dequeue();
-            server.processRequest(req);
+            if (server.getIsAvailable()) {              // if server can process
+                Request req = requestQueue.dequeue();
+                server.processRequest(req);
+            } else {                                    // if server is already running
+                server.processCycle(); 
+            }
         }
     }
 }
 
 // void LoadBalancer::balanceLoad() {
 //     // Placeholder for load balancing logic, e.g., adding/removing web servers based on load
-//     // This is for extracredit 2
 // }
 
 void LoadBalancer::run(int timeLimit) {
