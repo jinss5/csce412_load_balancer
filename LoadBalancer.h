@@ -15,7 +15,7 @@ public:
     LoadBalancer(int numServers, int queueSize);
     void addRequest(const Request& req);
     void assignRequests();
-    //void balanceLoad();
+    void balanceLoad();
     void run(int timeLimit);
 };
 
