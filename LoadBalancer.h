@@ -17,6 +17,8 @@ public:
     void assignRequests();
     void balanceLoad();
     void run(int timeLimit);
+    void addServer(int count);
+    void removeServer(int count);
 };
 
 #endif // LOADBALANCER_H
