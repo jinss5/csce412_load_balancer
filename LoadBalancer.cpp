@@ -1,4 +1,5 @@
 #include "LoadBalancer.h"
+#include "RandomGenerator.h"
 #include <iostream>
 
 LoadBalancer::LoadBalancer(int numServers, int queueSize) : requestQueue(queueSize), currentTime(0) {
@@ -38,6 +39,7 @@ void LoadBalancer::run(int timeLimit) {
 
     while (currentTime < timeLimit) {
         std::cout << "Clock cycle: " << currentTime << std::endl;
+        addRequest(Request(RandomGenerator::generateRandomIP(), RandomGenerator::generateRandomIP(), rand() % 100, RandomGenerator::generateRandomJobType()));
         assignRequests();
         //balanceLoad();
         currentTime++;

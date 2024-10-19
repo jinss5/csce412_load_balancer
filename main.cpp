@@ -1,17 +1,9 @@
 #include "LoadBalancer.h"
 #include "Request.h"
+#include "RandomGenerator.h"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-
-std::string generateRandomIP() {
-    return std::to_string(rand() % 256) + "." + std::to_string(rand() % 256) + "." + 
-           std::to_string(rand() % 256) + "." + std::to_string(rand() % 256);
-}
-
-char generateRandomJobType() {
-    return (rand() % 2 == 0) ? 'P' : 'S';
-}
 
 int main() {
     srand(static_cast<unsigned int>(time(0)));
@@ -24,8 +16,8 @@ int main() {
 
     LoadBalancer lb(numServers, numServers * 100);
 
-    for (int i = 0; i < numServers * 100; ++i) {
-        lb.addRequest(Request(generateRandomIP(), generateRandomIP(), rand() % 10, generateRandomJobType()));
+    for (int i = 0; i < numServers; ++i) { // add first n requests as te server is initialized and then add random requests.
+        lb.addRequest(Request(RandomGenerator::generateRandomIP(), RandomGenerator::generateRandomIP(), rand() % 100, RandomGenerator::generateRandomJobType()));
     }
 
     lb.run(timeLimit);
