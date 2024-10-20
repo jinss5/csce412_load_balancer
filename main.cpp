@@ -1,3 +1,8 @@
+/**
+ * @file main.cpp
+ * @brief Main entry point for the LoadBalancer simulation.
+ */
+
 #include "LoadBalancer.h"
 #include "Request.h"
 #include "RandomGenerator.h"
@@ -8,6 +13,11 @@
 
 std::ofstream logFile;
 
+/**
+ * @brief Main function to run the load balancer simulation.
+ * 
+ * @return int Returns 0 if the program completes successfully.
+ */
 int main() {
     srand(static_cast<unsigned int>(time(0)));
 

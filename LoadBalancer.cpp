@@ -1,3 +1,8 @@
+/**
+ * @file LoadBalancer.cpp
+ * @brief Implementation of the LoadBalancer class.
+ */
+
 #include "LoadBalancer.h"
 #include "RandomGenerator.h"
 #include <iostream>
@@ -7,12 +12,23 @@
 
 extern std::ofstream logFile;
 
+/**
+ * @brief Constructs a new LoadBalancer object.
+ * 
+ * @param numServers Number of servers to initialize.
+ * @param queueSize Maximum size of the request queue.
+ */
 LoadBalancer::LoadBalancer(int numServers, int queueSize) : requestQueue(queueSize), currentTime(0) {
     for (int i = 0; i < numServers; ++i) {
         webServers.push_back(WebServer(i + 1));
     }
 }
 
+/**
+ * @brief Adds a request to the load balancer's request queue.
+ * 
+ * @param req The request to be added.
+ */
 void LoadBalancer::addRequest(const Request& req) {
     if (!requestQueue.isFull()) {
         requestQueue.enqueue(req);
@@ -22,6 +38,11 @@ void LoadBalancer::addRequest(const Request& req) {
     }
 }
 
+/**
+ * @brief Assigns requests to servers.
+ * 
+ * Processes requests from the queue and assigns them to available servers.
+ */
 void LoadBalancer::assignRequests() {
     std::set<int> taskTime; 
     for (auto& server : webServers) {
@@ -39,6 +60,11 @@ void LoadBalancer::assignRequests() {
     logFile << "Task time between " << *taskTime.begin() << " and " << *taskTime.rbegin() << "\n" <<std::endl;
 }
 
+/**
+ * @brief Adds more servers to the load balancer.
+ * 
+ * @param count The number of servers to add.
+ */
 void LoadBalancer::addServer(int count) {
     int n = webServers.size();
 
@@ -47,16 +73,25 @@ void LoadBalancer::addServer(int count) {
     }
 }
 
+/**
+ * @brief Removes servers from the load balancer.
+ * 
+ * @param count The number of servers to remove.
+ */
 void LoadBalancer::removeServer(int count) {
     for (int i = 0; i < count; ++i) {
        webServers.pop_back();
     }
 }
 
-void LoadBalancer::balanceLoad() { // adding/removing web servers based on load
-    // maintain at least 3 servers
-    // add server if queue.size > server*100
-    // remove server if queue.size == server
+/**
+ * @brief Balances the load by adding or removing servers.
+ *  maintain at least 3 servers
+ *  add server if queue.size > server * 100
+ *  remove server if queue.size == server
+ */
+void LoadBalancer::balanceLoad() {
+
     int numServers = webServers.size();
     if (numServers >= 4) {
         if (requestQueue.size() > numServers * 100) {
@@ -67,9 +102,12 @@ void LoadBalancer::balanceLoad() { // adding/removing web servers based on load
             removeServer(1);
         }
     }
-    logFile << "number of servers: " << webServers.size() << std::endl;
+    logFile << "Number of servers: " << webServers.size() << std::endl;
 }
 
+/**
+ * @brief Runs the load balancer for assigned clock cycle
+ */
 void LoadBalancer::run(int timeLimit) {
     logFile << "Starting Queue Size: " << requestQueue.size() << std::endl;
 
