@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['loadbalancer_2ecpp_0',['LoadBalancer.cpp',['../_load_balancer_8cpp.html',1,'']]],
-  ['loadbalancer_2eh_1',['LoadBalancer.h',['../_load_balancer_8h.html',1,'']]]
+  ['iprangeblocker_2ecpp_0',['IPRangeBlocker.cpp',['../_i_p_range_blocker_8cpp.html',1,'']]],
+  ['iprangeblocker_2eh_1',['IPRangeBlocker.h',['../_i_p_range_blocker_8h.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['currenttime_0',['currentTime',['../class_load_balancer.html#a5dbc11f309322b90fe6183b70b99b0eb',1,'LoadBalancer']]]
+  ['blockedprefixes_0',['blockedPrefixes',['../class_i_p_range_blocker.html#abc704ce5d2b340f30fbf8433111fe87a',1,'IPRangeBlocker']]]
 ];

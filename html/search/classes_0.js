@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadbalancer_0',['LoadBalancer',['../class_load_balancer.html',1,'']]]
+  ['iprangeblocker_0',['IPRangeBlocker',['../class_i_p_range_blocker.html',1,'']]]
 ];

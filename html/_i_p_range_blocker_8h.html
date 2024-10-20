@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: LoadBalancer.cpp File Reference</title>
+<title>My Project: IPRangeBlocker.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,68 +85,27 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">LoadBalancer.cpp File Reference</div></div>
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">IPRangeBlocker.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the <a class="el" href="class_load_balancer.html" title="A class that simulates a load balancer managing server requests.">LoadBalancer</a> class.  
+<p>Header file for the <a class="el" href="class_i_p_range_blocker.html" title="A class that manages blocking of IP addresses by prefix.">IPRangeBlocker</a> class, which implements IP blocking functionality.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_load_balancer_8h_source.html">LoadBalancer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_random_generator_8h_source.html">RandomGenerator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_i_p_range_blocker_8h_source.html">IPRangeBlocker.h</a>&quot;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;cstdlib&gt;</code><br />
-<code>#include &lt;set&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a436ee5100c9f7c541dc8648cf2afec59" id="r_a436ee5100c9f7c541dc8648cf2afec59"><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a436ee5100c9f7c541dc8648cf2afec59">logFile</a></td></tr>
-<tr class="separator:a436ee5100c9f7c541dc8648cf2afec59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfcc90592d23b68bb00d6d6480f4672a" id="r_acfcc90592d23b68bb00d6d6480f4672a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_p_range_blocker.html">IPRangeBlocker</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfcc90592d23b68bb00d6d6480f4672a">ipBlocker</a></td></tr>
-<tr class="separator:acfcc90592d23b68bb00d6d6480f4672a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div>
+<p><a href="_i_p_range_blocker_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_p_range_blocker.html">IPRangeBlocker</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that manages blocking of IP addresses by prefix.  <a href="class_i_p_range_blocker.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the <a class="el" href="class_load_balancer.html" title="A class that simulates a load balancer managing server requests.">LoadBalancer</a> class. </p>
-</div><h2 class="groupheader">Variable Documentation</h2>
-<a id="acfcc90592d23b68bb00d6d6480f4672a" name="acfcc90592d23b68bb00d6d6480f4672a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfcc90592d23b68bb00d6d6480f4672a">&#9670;&#160;</a></span>ipBlocker</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_i_p_range_blocker.html">IPRangeBlocker</a> ipBlocker</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a436ee5100c9f7c541dc8648cf2afec59" name="a436ee5100c9f7c541dc8648cf2afec59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a436ee5100c9f7c541dc8648cf2afec59">&#9670;&#160;</a></span>logFile</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ofstream logFile</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<div class="textblock"><p>Header file for the <a class="el" href="class_i_p_range_blocker.html" title="A class that manages blocking of IP addresses by prefix.">IPRangeBlocker</a> class, which implements IP blocking functionality. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

@@ -1,0 +1,115 @@
+\doxysection{IPRange\+Blocker Class Reference}
+\hypertarget{class_i_p_range_blocker}{}\label{class_i_p_range_blocker}\index{IPRangeBlocker@{IPRangeBlocker}}
+
+
+A class that manages blocking of IP addresses by prefix.  
+
+
+
+
+{\ttfamily \#include $<$IPRange\+Blocker.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_p_range_blocker_a0b04312d1ce8e8bb46c1d87cca4cc2d2}{IPRange\+Blocker}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_i_p_range_blocker}{IPRange\+Blocker}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_p_range_blocker_a2eb7bbd4171e575a376ddebd7814d750}{block\+IPPrefix}} (const std\+::string \&prefix)
+\begin{DoxyCompactList}\small\item\em Adds an IP prefix to the list of blocked addresses. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i_p_range_blocker_a3417fa778d059c4792c46031d4cbda71}{is\+Blocked}} (const std\+::string \&ip) const
+\begin{DoxyCompactList}\small\item\em Checks if the given IP address is blocked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_i_p_range_blocker_abc704ce5d2b340f30fbf8433111fe87a}{blocked\+Prefixes}}
+\begin{DoxyCompactList}\small\item\em A list of blocked IP prefixes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that manages blocking of IP addresses by prefix. 
+
+The \doxylink{class_i_p_range_blocker}{IPRange\+Blocker} class allows for blocking specific IP address prefixes, checking if incoming requests are from blocked addresses, and rejecting them if necessary. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_p_range_blocker_a0b04312d1ce8e8bb46c1d87cca4cc2d2}\index{IPRangeBlocker@{IPRangeBlocker}!IPRangeBlocker@{IPRangeBlocker}}
+\index{IPRangeBlocker@{IPRangeBlocker}!IPRangeBlocker@{IPRangeBlocker}}
+\doxysubsubsection{\texorpdfstring{IPRangeBlocker()}{IPRangeBlocker()}}
+{\footnotesize\ttfamily \label{class_i_p_range_blocker_a0b04312d1ce8e8bb46c1d87cca4cc2d2} 
+IPRange\+Blocker\+::\+IPRange\+Blocker (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for \doxylink{class_i_p_range_blocker}{IPRange\+Blocker}. 
+
+Constructs an \doxylink{class_i_p_range_blocker}{IPRange\+Blocker} object with an empty list of blocked prefixes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_p_range_blocker_a2eb7bbd4171e575a376ddebd7814d750}\index{IPRangeBlocker@{IPRangeBlocker}!blockIPPrefix@{blockIPPrefix}}
+\index{blockIPPrefix@{blockIPPrefix}!IPRangeBlocker@{IPRangeBlocker}}
+\doxysubsubsection{\texorpdfstring{blockIPPrefix()}{blockIPPrefix()}}
+{\footnotesize\ttfamily \label{class_i_p_range_blocker_a2eb7bbd4171e575a376ddebd7814d750} 
+void IPRange\+Blocker\+::block\+IPPrefix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix}{}\end{DoxyParamCaption})}
+
+
+
+Adds an IP prefix to the list of blocked addresses. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & The IP prefix to block (e.\+g., "{}192.\+168.\+0."{}).\\
+\hline
+\end{DoxyParams}
+This function allows you to block an entire range of IP addresses by specifying a prefix. For example, blocking "{}192.\+168.\+0."{} will block all addresses that start with "{}192.\+168.\+0."{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & The IP prefix to block. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_i_p_range_blocker_a3417fa778d059c4792c46031d4cbda71}\index{IPRangeBlocker@{IPRangeBlocker}!isBlocked@{isBlocked}}
+\index{isBlocked@{isBlocked}!IPRangeBlocker@{IPRangeBlocker}}
+\doxysubsubsection{\texorpdfstring{isBlocked()}{isBlocked()}}
+{\footnotesize\ttfamily \label{class_i_p_range_blocker_a3417fa778d059c4792c46031d4cbda71} 
+bool IPRange\+Blocker\+::is\+Blocked (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the given IP address is blocked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the IP address is blocked, false otherwise.
+\end{DoxyReturn}
+This function compares the input IP address against the list of blocked prefixes. If the IP address starts with any of the blocked prefixes, it is considered blocked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the IP address is blocked, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_i_p_range_blocker_abc704ce5d2b340f30fbf8433111fe87a}\index{IPRangeBlocker@{IPRangeBlocker}!blockedPrefixes@{blockedPrefixes}}
+\index{blockedPrefixes@{blockedPrefixes}!IPRangeBlocker@{IPRangeBlocker}}
+\doxysubsubsection{\texorpdfstring{blockedPrefixes}{blockedPrefixes}}
+{\footnotesize\ttfamily \label{class_i_p_range_blocker_abc704ce5d2b340f30fbf8433111fe87a} 
+std\+::vector$<$std\+::string$>$ IPRange\+Blocker\+::blocked\+Prefixes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A list of blocked IP prefixes. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_i_p_range_blocker_8h}{IPRange\+Blocker.\+h}}\item 
+\mbox{\hyperlink{_i_p_range_blocker_8cpp}{IPRange\+Blocker.\+cpp}}\end{DoxyCompactItemize}

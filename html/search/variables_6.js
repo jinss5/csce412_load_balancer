@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['serverid_0',['serverId',['../class_web_server.html#acad4c782b7153f0dc89ffd3b2b7a61a6',1,'WebServer']]]
+  ['remainingtime_0',['remainingTime',['../class_web_server.html#a335847d9ece97e85a9272169cbd4d067',1,'WebServer']]],
+  ['requestqueue_1',['requestQueue',['../class_load_balancer.html#aa5982376d8696c4c24eccfa97d12e276',1,'LoadBalancer']]],
+  ['requests_2',['requests',['../class_request_queue.html#a2d87f2f86db3d5f55f470a23a929adf3',1,'RequestQueue']]]
 ];

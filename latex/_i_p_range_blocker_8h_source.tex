@@ -1,0 +1,25 @@
+\doxysection{IPRange\+Blocker.\+h}
+\hypertarget{_i_p_range_blocker_8h_source}{}\label{_i_p_range_blocker_8h_source}\mbox{\hyperlink{_i_p_range_blocker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ IPRANGEBLOCKER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ IPRANGEBLOCKER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_p_range_blocker}{IPRangeBlocker}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_i_p_range_blocker_a0b04312d1ce8e8bb46c1d87cca4cc2d2}{IPRangeBlocker}}();}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_p_range_blocker_a2eb7bbd4171e575a376ddebd7814d750}{blockIPPrefix}}(\textcolor{keyword}{const}\ std::string\&\ prefix);}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_p_range_blocker_a3417fa778d059c4792c46031d4cbda71}{isBlocked}}(\textcolor{keyword}{const}\ std::string\&\ ip)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_i_p_range_blocker_abc704ce5d2b340f30fbf8433111fe87a}{blockedPrefixes}};}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IPRANGEBLOCKER\_H}}
+
+\end{DoxyCode}
