@@ -1,0 +1,152 @@
+\doxysection{Web\+Server Class Reference}
+\hypertarget{class_web_server}{}\label{class_web_server}\index{WebServer@{WebServer}}
+
+
+A class that simulates a web server processing requests.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}{Web\+Server}} (int id)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_web_server}{Web\+Server}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_web_server_a40454940382db03650f303679c602f37}{process\+Request}} (const \mbox{\hyperlink{class_request}{Request}} \&req)
+\begin{DoxyCompactList}\small\item\em Processes a request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_web_server_a366118f1b6a0171b51ac2f3264dd4d22}{process\+Cycle}} ()
+\begin{DoxyCompactList}\small\item\em Processes one clock cycle on the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_web_server_a95eb447ea9936e3501d8bd997d8fe7e8}{request\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Completes the request currently being processed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_web_server_adaafd655a3b5132889421b487c3c2dbc}{get\+Is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the server is available for a new request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_web_server_a335847d9ece97e85a9272169cbd4d067}{remaining\+Time}}
+\begin{DoxyCompactList}\small\item\em Time remaining for the current request. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_web_server_acad4c782b7153f0dc89ffd3b2b7a61a6}{server\+Id}}
+\begin{DoxyCompactList}\small\item\em ID of the web server. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_web_server_a7e3a1ced7c847f7bfbb2407c27239e7c}{is\+Available}}
+\begin{DoxyCompactList}\small\item\em Availability status of the web server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that simulates a web server processing requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily \label{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f} 
+Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{class_web_server}{Web\+Server}. 
+
+Constructs a new \doxylink{class_web_server}{Web\+Server} object with the given server ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the web server. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_web_server_adaafd655a3b5132889421b487c3c2dbc}\index{WebServer@{WebServer}!getIsAvailable@{getIsAvailable}}
+\index{getIsAvailable@{getIsAvailable}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getIsAvailable()}{getIsAvailable()}}
+{\footnotesize\ttfamily \label{class_web_server_adaafd655a3b5132889421b487c3c2dbc} 
+bool Web\+Server\+::get\+Is\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the server is available for a new request. 
+
+Checks if the web server is available to process a new request.
+
+\begin{DoxyReturn}{Returns}
+true if the server is available, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_web_server_a366118f1b6a0171b51ac2f3264dd4d22}\index{WebServer@{WebServer}!processCycle@{processCycle}}
+\index{processCycle@{processCycle}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{processCycle()}{processCycle()}}
+{\footnotesize\ttfamily \label{class_web_server_a366118f1b6a0171b51ac2f3264dd4d22} 
+void Web\+Server\+::process\+Cycle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Processes one clock cycle on the server. 
+
+Simulates the processing of one clock cycle on the server. \Hypertarget{class_web_server_a40454940382db03650f303679c602f37}\index{WebServer@{WebServer}!processRequest@{processRequest}}
+\index{processRequest@{processRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{processRequest()}{processRequest()}}
+{\footnotesize\ttfamily \label{class_web_server_a40454940382db03650f303679c602f37} 
+void Web\+Server\+::process\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{req}{}\end{DoxyParamCaption})}
+
+
+
+Processes a request. 
+
+Processes a request on the web server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The request to be processed.\\
+\hline
+{\em req} & The request to process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_web_server_a95eb447ea9936e3501d8bd997d8fe7e8}\index{WebServer@{WebServer}!requestCompleted@{requestCompleted}}
+\index{requestCompleted@{requestCompleted}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{requestCompleted()}{requestCompleted()}}
+{\footnotesize\ttfamily \label{class_web_server_a95eb447ea9936e3501d8bd997d8fe7e8} 
+void Web\+Server\+::request\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Completes the request currently being processed. 
+
+Marks a request as completed. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_web_server_a7e3a1ced7c847f7bfbb2407c27239e7c}\index{WebServer@{WebServer}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isAvailable}{isAvailable}}
+{\footnotesize\ttfamily \label{class_web_server_a7e3a1ced7c847f7bfbb2407c27239e7c} 
+bool Web\+Server\+::is\+Available\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Availability status of the web server. 
+
+\Hypertarget{class_web_server_a335847d9ece97e85a9272169cbd4d067}\index{WebServer@{WebServer}!remainingTime@{remainingTime}}
+\index{remainingTime@{remainingTime}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{remainingTime}{remainingTime}}
+{\footnotesize\ttfamily \label{class_web_server_a335847d9ece97e85a9272169cbd4d067} 
+int Web\+Server\+::remaining\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time remaining for the current request. 
+
+\Hypertarget{class_web_server_acad4c782b7153f0dc89ffd3b2b7a61a6}\index{WebServer@{WebServer}!serverId@{serverId}}
+\index{serverId@{serverId}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{serverId}{serverId}}
+{\footnotesize\ttfamily \label{class_web_server_acad4c782b7153f0dc89ffd3b2b7a61a6} 
+int Web\+Server\+::server\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ID of the web server. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_web_server_8h}{Web\+Server.\+h}}\item 
+\mbox{\hyperlink{_web_server_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

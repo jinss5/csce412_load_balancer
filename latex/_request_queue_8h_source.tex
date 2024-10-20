@@ -1,0 +1,32 @@
+\doxysection{Request\+Queue.\+h}
+\hypertarget{_request_queue_8h_source}{}\label{_request_queue_8h_source}\mbox{\hyperlink{_request_queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ REQUESTQUEUE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ REQUESTQUEUE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_request_8h}{Request.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request_queue}{RequestQueue}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::queue<Request>\ \mbox{\hyperlink{class_request_queue_a2d87f2f86db3d5f55f470a23a929adf3}{requests}};\ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_queue_a55f232a006e048861392d8290c74318c}{maxSize}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_request_queue_a8da2bf21ccb2289c7b89a2ee5ecbf84e}{RequestQueue}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_queue_a55f232a006e048861392d8290c74318c}{maxSize}});\ \ \ \ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_queue_a5e0a34c5a00ea563b38d93dbfa04b65c}{enqueue}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ req);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_request}{Request}}\ \mbox{\hyperlink{class_request_queue_ae170f2f285843d363ac003b7263dde95}{dequeue}}();}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_queue_a64c8b54cc30da887d61663e44dece1d5}{isEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_queue_a7b4745b4b8a25e2f930e897df6b306cd}{isFull}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_queue_ac2a2a546ac5579e45ca11f433a8a804c}{size}}();}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REQUESTQUEUE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,58 @@
+\doxysection{Random\+Generator Class Reference}
+\hypertarget{class_random_generator}{}\label{class_random_generator}\index{RandomGenerator@{RandomGenerator}}
+
+
+A utility class to generate random IPs and job types.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Generator.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{class_random_generator_abd53d05258c5d1905c857614cf7c5c2a}{generate\+Random\+IP}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random IP address. \end{DoxyCompactList}\item 
+static char \mbox{\hyperlink{class_random_generator_a097560d80149a6b2b5fa78bc4dd55d9f}{generate\+Random\+Job\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Generates a random job type (\textquotesingle{}P\textquotesingle{} or \textquotesingle{}S\textquotesingle{}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class to generate random IPs and job types. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_random_generator_abd53d05258c5d1905c857614cf7c5c2a}\index{RandomGenerator@{RandomGenerator}!generateRandomIP@{generateRandomIP}}
+\index{generateRandomIP@{generateRandomIP}!RandomGenerator@{RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{generateRandomIP()}{generateRandomIP()}}
+{\footnotesize\ttfamily \label{class_random_generator_abd53d05258c5d1905c857614cf7c5c2a} 
+std\+::string Random\+Generator\+::generate\+Random\+IP (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a random IP address. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Randomly generated IP address in the form of xxx.\+xxx.\+xxx.\+xxx. 
+\end{DoxyReturn}
+\Hypertarget{class_random_generator_a097560d80149a6b2b5fa78bc4dd55d9f}\index{RandomGenerator@{RandomGenerator}!generateRandomJobType@{generateRandomJobType}}
+\index{generateRandomJobType@{generateRandomJobType}!RandomGenerator@{RandomGenerator}}
+\doxysubsubsection{\texorpdfstring{generateRandomJobType()}{generateRandomJobType()}}
+{\footnotesize\ttfamily \label{class_random_generator_a097560d80149a6b2b5fa78bc4dd55d9f} 
+char Random\+Generator\+::generate\+Random\+Job\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generates a random job type (\textquotesingle{}P\textquotesingle{} or \textquotesingle{}S\textquotesingle{}). 
+
+Generates a random job type.
+
+\begin{DoxyReturn}{Returns}
+char \textquotesingle{}P\textquotesingle{} for processing or \textquotesingle{}S\textquotesingle{} for storage. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_random_generator_8h}{Random\+Generator.\+h}}\item 
+\mbox{\hyperlink{_random_generator_8cpp}{Random\+Generator.\+cpp}}\end{DoxyCompactItemize}

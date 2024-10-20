@@ -1,0 +1,182 @@
+\doxysection{Request Class Reference}
+\hypertarget{class_request}{}\label{class_request}\index{Request@{Request}}
+
+
+A class representing a request with an input/output IP, time, and job type.  
+
+
+
+
+{\ttfamily \#include $<$Request.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_request_ac36b9b019b60dfece158792882a87bfb}{Request}} (std\+::string in, std\+::string out, int t, char type)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_request}{Request} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_request_a25705cdbdf85c7ffdfff0e41795bfbfc}{get\+Ip\+In}} () const
+\begin{DoxyCompactList}\small\item\em Gets the input IP address. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_request_aa55c898286b6895e7d7245c9de97b211}{get\+Ip\+Out}} () const
+\begin{DoxyCompactList}\small\item\em Gets the output IP address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_ae2e2641e6eb49b4dd1b29726c098789d}{get\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Gets the processing time of the request. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_request_a543cfe98d09b712ffcfe95f3322fa5ba}{get\+Job\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Gets the job type of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_request_aa83b5e8331e7f13fb5742984f955d0c1}{ip\+In}}
+\begin{DoxyCompactList}\small\item\em Input IP address. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_request_af585c7ba4ed14c760cf8d72b232091b4}{ip\+Out}}
+\begin{DoxyCompactList}\small\item\em Output IP address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_a3cfb576ed0b5e08612f3de8bc7cd72e2}{time}}
+\begin{DoxyCompactList}\small\item\em Processing time in clock cycles. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_request_ad49a0f18615ea50f9a11cd2494c93044}{job\+Type}}
+\begin{DoxyCompactList}\small\item\em \textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a request with an input/output IP, time, and job type. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_request_ac36b9b019b60dfece158792882a87bfb}\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily \label{class_request_ac36b9b019b60dfece158792882a87bfb} 
+Request\+::\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{in}{, }\item[{std\+::string}]{out}{, }\item[{int}]{t}{, }\item[{char}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{class_request}{Request} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Input IP address. \\
+\hline
+{\em out} & Output IP address. \\
+\hline
+{\em t} & Processing time in clock cycles. \\
+\hline
+{\em type} & Job type (\textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming).\\
+\hline
+{\em in} & The input IP address. \\
+\hline
+{\em out} & The output IP address. \\
+\hline
+{\em t} & The processing time in clock cycles. \\
+\hline
+{\em type} & The type of the job (\textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_a25705cdbdf85c7ffdfff0e41795bfbfc}\index{Request@{Request}!getIpIn@{getIpIn}}
+\index{getIpIn@{getIpIn}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIpIn()}{getIpIn()}}
+{\footnotesize\ttfamily \label{class_request_a25705cdbdf85c7ffdfff0e41795bfbfc} 
+std\+::string Request\+::get\+Ip\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the input IP address. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Input IP address.
+
+std\+::string The input IP address. 
+\end{DoxyReturn}
+\Hypertarget{class_request_aa55c898286b6895e7d7245c9de97b211}\index{Request@{Request}!getIpOut@{getIpOut}}
+\index{getIpOut@{getIpOut}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIpOut()}{getIpOut()}}
+{\footnotesize\ttfamily \label{class_request_aa55c898286b6895e7d7245c9de97b211} 
+std\+::string Request\+::get\+Ip\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the output IP address. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string Output IP address.
+
+std\+::string The output IP address. 
+\end{DoxyReturn}
+\Hypertarget{class_request_a543cfe98d09b712ffcfe95f3322fa5ba}\index{Request@{Request}!getJobType@{getJobType}}
+\index{getJobType@{getJobType}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getJobType()}{getJobType()}}
+{\footnotesize\ttfamily \label{class_request_a543cfe98d09b712ffcfe95f3322fa5ba} 
+char Request\+::get\+Job\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the job type of the request. 
+
+\begin{DoxyReturn}{Returns}
+char Job type (\textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming).
+
+char The job type (\textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming). 
+\end{DoxyReturn}
+\Hypertarget{class_request_ae2e2641e6eb49b4dd1b29726c098789d}\index{Request@{Request}!getTime@{getTime}}
+\index{getTime@{getTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily \label{class_request_ae2e2641e6eb49b4dd1b29726c098789d} 
+int Request\+::get\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the processing time of the request. 
+
+\begin{DoxyReturn}{Returns}
+int Processing time in clock cycles.
+
+int The processing time in clock cycles. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_request_aa83b5e8331e7f13fb5742984f955d0c1}\index{Request@{Request}!ipIn@{ipIn}}
+\index{ipIn@{ipIn}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ipIn}{ipIn}}
+{\footnotesize\ttfamily \label{class_request_aa83b5e8331e7f13fb5742984f955d0c1} 
+std\+::string Request\+::ip\+In\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input IP address. 
+
+\Hypertarget{class_request_af585c7ba4ed14c760cf8d72b232091b4}\index{Request@{Request}!ipOut@{ipOut}}
+\index{ipOut@{ipOut}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ipOut}{ipOut}}
+{\footnotesize\ttfamily \label{class_request_af585c7ba4ed14c760cf8d72b232091b4} 
+std\+::string Request\+::ip\+Out\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Output IP address. 
+
+\Hypertarget{class_request_ad49a0f18615ea50f9a11cd2494c93044}\index{Request@{Request}!jobType@{jobType}}
+\index{jobType@{jobType}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{jobType}{jobType}}
+{\footnotesize\ttfamily \label{class_request_ad49a0f18615ea50f9a11cd2494c93044} 
+char Request\+::job\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\textquotesingle{}P\textquotesingle{} for processing, \textquotesingle{}S\textquotesingle{} for streaming. 
+
+\Hypertarget{class_request_a3cfb576ed0b5e08612f3de8bc7cd72e2}\index{Request@{Request}!time@{time}}
+\index{time@{time}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily \label{class_request_a3cfb576ed0b5e08612f3de8bc7cd72e2} 
+int Request\+::time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processing time in clock cycles. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_request_8h}{Request.\+h}}\item 
+\mbox{\hyperlink{_request_8cpp}{Request.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,30 @@
+\doxysection{Web\+Server.\+h}
+\hypertarget{_web_server_8h_source}{}\label{_web_server_8h_source}\mbox{\hyperlink{_web_server_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ WEBSERVER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ WEBSERVER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_request_8h}{Request.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_web_server}{WebServer}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_web_server_a335847d9ece97e85a9272169cbd4d067}{remainingTime}};\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_web_server_acad4c782b7153f0dc89ffd3b2b7a61a6}{serverId}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_web_server_a7e3a1ced7c847f7bfbb2407c27239e7c}{isAvailable}};\ \ \ \ \ \ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}{WebServer}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_server_a40454940382db03650f303679c602f37}{processRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ req);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_server_a366118f1b6a0171b51ac2f3264dd4d22}{processCycle}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_web_server_a95eb447ea9936e3501d8bd997d8fe7e8}{requestCompleted}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_web_server_adaafd655a3b5132889421b487c3c2dbc}{getIsAvailable}}();}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WEBSERVER\_H}}
+
+\end{DoxyCode}

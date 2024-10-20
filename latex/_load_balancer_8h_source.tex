@@ -1,0 +1,36 @@
+\doxysection{Load\+Balancer.\+h}
+\hypertarget{_load_balancer_8h_source}{}\label{_load_balancer_8h_source}\mbox{\hyperlink{_load_balancer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ LOADBALANCER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LOADBALANCER\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_request_queue_8h}{RequestQueue.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_web_server_8h}{WebServer.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_load_balancer}{LoadBalancer}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<WebServer>\ \mbox{\hyperlink{class_load_balancer_aaed0b218b16bf230bedfecf045efec42}{webServers}};\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_request_queue}{RequestQueue}}\ \mbox{\hyperlink{class_load_balancer_aa5982376d8696c4c24eccfa97d12e276}{requestQueue}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_load_balancer_a5dbc11f309322b90fe6183b70b99b0eb}{currentTime}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_load_balancer_a3c39fb5995e799b1948032e9cbc53196}{LoadBalancer}}(\textcolor{keywordtype}{int}\ numServers,\ \textcolor{keywordtype}{int}\ queueSize);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_adc5b830b2a7c7da382ea1485c2ed7020}{addRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ req);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a4e1f9e12fb73917c994326159d04fa81}{assignRequests}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a09b174aa89c41112c3d2386d9003c9af}{addServer}}(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a6b66c22295c3ef8455dd40222d3c52e5}{removeServer}}(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a7b83bc6336a6491a7cb011d92643828d}{balanceLoad}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_balancer_a032d6213a39de10de550dfa3fe4599fa}{run}}(\textcolor{keywordtype}{int}\ timeLimit);}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOADBALANCER\_H}}
+
+\end{DoxyCode}
