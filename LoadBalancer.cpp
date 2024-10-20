@@ -55,7 +55,7 @@ void LoadBalancer::balanceLoad() { // adding/removing web servers based on load
             addServer(requestQueue.size() - numServers * 100);
         }
 
-        if (requestQueue.size() <= numServers) {
+        if (requestQueue.size() * 10 <= numServers) {
             removeServer(1);
         }
     }
@@ -69,7 +69,7 @@ void LoadBalancer::run(int timeLimit) {
         int numRequestsToAdd = rand() % 2;
 
         for (int i = 0; i < numRequestsToAdd; ++i) {
-            addRequest(Request(RandomGenerator::generateRandomIP(), RandomGenerator::generateRandomIP(), rand() % 10, RandomGenerator::generateRandomJobType()));
+            addRequest(Request(RandomGenerator::generateRandomIP(), RandomGenerator::generateRandomIP(), rand() % 10 + 1, RandomGenerator::generateRandomJobType()));
         }
 
         balanceLoad();
