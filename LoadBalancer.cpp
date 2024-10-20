@@ -5,12 +5,14 @@
 
 #include "LoadBalancer.h"
 #include "RandomGenerator.h"
+#include "IPRangeBlocker.h"
 #include <iostream>
 #include <cstdlib>  // for rand()
 #include <set>
 #include <fstream>
 
 extern std::ofstream logFile;
+IPRangeBlocker ipBlocker;
 
 /**
  * @brief Constructs a new LoadBalancer object.
@@ -19,6 +21,21 @@ extern std::ofstream logFile;
  * @param queueSize Maximum size of the request queue.
  */
 LoadBalancer::LoadBalancer(int numServers, int queueSize) : requestQueue(queueSize), currentTime(0) {
+    ipBlocker.blockIPPrefix("192.168.0."); 
+    ipBlocker.blockIPPrefix("10.0.0.");
+    ipBlocker.blockIPPrefix("125.23.23.");   
+    ipBlocker.blockIPPrefix("162.87.187.");
+    ipBlocker.blockIPPrefix("221.35.244.");
+    ipBlocker.blockIPPrefix("201.31.207.");
+    ipBlocker.blockIPPrefix("185.199.37.");
+    ipBlocker.blockIPPrefix("150.192.5.");
+    ipBlocker.blockIPPrefix("59.187.209.");
+    ipBlocker.blockIPPrefix("84.168.78.");
+    ipBlocker.blockIPPrefix("144.71.32.");
+    ipBlocker.blockIPPrefix("190.205.38.");
+    ipBlocker.blockIPPrefix("103.7.21.");
+  
+
     for (int i = 0; i < numServers; ++i) {
         webServers.push_back(WebServer(i + 1));
     }
@@ -30,12 +47,20 @@ LoadBalancer::LoadBalancer(int numServers, int queueSize) : requestQueue(queueSi
  * @param req The request to be added.
  */
 void LoadBalancer::addRequest(const Request& req) {
-    if (!requestQueue.isFull()) {
-        requestQueue.enqueue(req);
-        logFile << "Added request to queue: " << req.getIpIn() << " -> " << req.getIpOut() << std::endl;
+    std::string clientIP = req.getIpIn();
+    std::string serverIP = req.getIpOut();
+    if (ipBlocker.isBlocked(clientIP)){
+        logFile << "Blocked request from: " << clientIP << std::endl;
+    } else if (ipBlocker.isBlocked(serverIP)) {
+        logFile << "Blocked request from: " << clientIP << std::endl;
     } else {
-        logFile << "Queue is full! Dropping request." << std::endl;
-    }
+        if (!requestQueue.isFull()) {
+            requestQueue.enqueue(req);
+            logFile << "Added request to queue: " << req.getIpIn() << " -> " << req.getIpOut() << std::endl;
+        } else {
+            logFile << "Queue is full! Dropping request." << std::endl;
+        }
+    }    
 }
 
 /**

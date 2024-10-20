@@ -7,7 +7,7 @@ CFLAGS = -Wall -Werror -std=c++11
 TARGET = loadbalancer
 
 # Source files
-SRCS = main.cpp Request.cpp RequestQueue.cpp WebServer.cpp LoadBalancer.cpp RandomGenerator.cpp
+SRCS = main.cpp Request.cpp RequestQueue.cpp WebServer.cpp LoadBalancer.cpp RandomGenerator.cpp IPRangeBlocker.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

@@ -35,7 +35,7 @@ int main() {
 
     logFile << numServers << " servers are running for " << timeLimit << " clock sycles.\n" << std::endl;
 
-    LoadBalancer lb(numServers, numServers * 100);
+    LoadBalancer lb(numServers, numServers * 100); // (number of servers, queue)
 
     for (int i = 0; i < numServers * 100; ++i) { // add first n*10 requests as te server is initialized and then add random requests.
         lb.addRequest(Request(RandomGenerator::generateRandomIP(), RandomGenerator::generateRandomIP(), rand() % 10 + 1, RandomGenerator::generateRandomJobType()));
