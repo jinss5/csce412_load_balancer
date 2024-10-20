@@ -1,10 +1,13 @@
 #include "WebServer.h"
+#include <fstream>
+
+extern std::ofstream logFile;
 
 WebServer::WebServer(int id) : remainingTime(0), serverId(id), isAvailable(true) {}
 
 void WebServer::processRequest(const Request& req) {
     if (isAvailable) {
-        std::cout << "WebServer " << serverId << " processing request from " 
+        logFile << "WebServer " << serverId << " processing request from " 
                   << req.getIpIn() << " to " << req.getIpOut() << " (" << req.getJobType() << ")" 
                   << " for " << req.getTime() << " clock cycles." << std::endl;
     
@@ -23,7 +26,7 @@ void WebServer::processCycle() {
 }
 
 void WebServer::requestCompleted() {
-    std::cout << "WebServer " << serverId << " completed request." << std::endl;
+    logFile << "WebServer " << serverId << " completed request." << std::endl;
     isAvailable = true; 
 }
 

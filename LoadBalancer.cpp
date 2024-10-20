@@ -2,6 +2,10 @@
 #include "RandomGenerator.h"
 #include <iostream>
 #include <cstdlib>  // for rand()
+#include <set>
+#include <fstream>
+
+extern std::ofstream logFile;
 
 LoadBalancer::LoadBalancer(int numServers, int queueSize) : requestQueue(queueSize), currentTime(0) {
     for (int i = 0; i < numServers; ++i) {
@@ -12,23 +16,27 @@ LoadBalancer::LoadBalancer(int numServers, int queueSize) : requestQueue(queueSi
 void LoadBalancer::addRequest(const Request& req) {
     if (!requestQueue.isFull()) {
         requestQueue.enqueue(req);
-        std::cout << "Added request to queue: " << req.getIpIn() << " -> " << req.getIpOut() << std::endl;
+        logFile << "Added request to queue: " << req.getIpIn() << " -> " << req.getIpOut() << std::endl;
     } else {
-        std::cout << "Queue is full! Dropping request." << std::endl;
+        logFile << "Queue is full! Dropping request." << std::endl;
     }
 }
 
 void LoadBalancer::assignRequests() {
+    std::set<int> taskTime; 
     for (auto& server : webServers) {
         if (!requestQueue.isEmpty()) {
             if (server.getIsAvailable()) {              // if server can process
                 Request req = requestQueue.dequeue();
                 server.processRequest(req);
+                taskTime.insert(req.getTime());         // add task time
             } else {                                    // if server is already running
                 server.processCycle(); 
             }
         }
     }
+
+    logFile << "Task time between " << *taskTime.begin() << " and " << *taskTime.rbegin() << "\n" <<std::endl;
 }
 
 void LoadBalancer::addServer(int count) {
@@ -62,13 +70,13 @@ void LoadBalancer::balanceLoad() { // adding/removing web servers based on load
 }
 
 void LoadBalancer::run(int timeLimit) {
-    std::cout << "Starting Queue Size: " << requestQueue.size() << std::endl;
+    logFile << "Starting Queue Size: " << requestQueue.size() << std::endl;
 
     while (currentTime < timeLimit) {
-        std::cout << "Clock cycle: " << currentTime << std::endl;
+        logFile << "Clock cycle: " << currentTime << std::endl;
         int numRequestsToAdd = rand() % 2;
 
-        for (int i = 0; i < numRequestsToAdd; ++i) {
+        for (int i = 0; i < numRequestsToAdd; ++i) { // random requests
             addRequest(Request(RandomGenerator::generateRandomIP(), RandomGenerator::generateRandomIP(), rand() % 10 + 1, RandomGenerator::generateRandomJobType()));
         }
 
@@ -77,5 +85,5 @@ void LoadBalancer::run(int timeLimit) {
         currentTime++;
     }
 
-    std::cout << "Ending Queue Size: " << requestQueue.size() << std::endl;
+    logFile << "Ending Queue Size: " << requestQueue.size() << std::endl;
 }

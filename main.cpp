@@ -4,6 +4,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <fstream>
+
+std::ofstream logFile;
 
 int main() {
     srand(static_cast<unsigned int>(time(0)));
@@ -14,6 +17,14 @@ int main() {
     std::cout << "Enter simulation time limit (in clock cycles): ";
     std::cin >> timeLimit;
 
+    logFile.open("loadbalancer_log.txt");
+    if (!logFile) {
+        std::cerr << "Failed to open log file." << std::endl;
+        return 1;
+    }
+
+    logFile << numServers << " servers are running for " << timeLimit << " clock sycles.\n" << std::endl;
+
     LoadBalancer lb(numServers, numServers * 100);
 
     for (int i = 0; i < numServers * 100; ++i) { // add first n*10 requests as te server is initialized and then add random requests.
@@ -22,5 +33,6 @@ int main() {
 
     lb.run(timeLimit);
 
+    logFile.close();
     return 0;
 }
