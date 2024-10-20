@@ -67,6 +67,7 @@ void LoadBalancer::balanceLoad() { // adding/removing web servers based on load
             removeServer(1);
         }
     }
+    logFile << "number of servers: " << webServers.size() << std::endl;
 }
 
 void LoadBalancer::run(int timeLimit) {
